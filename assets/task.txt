@@ -1,0 +1,41 @@
+Navigation component (mobile-tablets)
+
+Background color - #F8F8F8
+Font - lily script one, black
+DropDown - background #6C705F
+Color - white
+Font- katibeh
+
+	     (desktop)
+
+Background color - #F8F8F8
+Title - font lily script one
+Color - black
+Menu list - font katibeh
+    
+ Hero component
+
+Image - sized to screen
+Text - customized for tab
+Font - kameron
+Color - #F8F8F8 85%
+
+ Sub-Title (component)
+Custom text
+Color - #6C705F
+Font - IM FELL FRENCH CANON SC
+
+Card component
+Border - solid #1E1E1E 43% 1px
+Image - box-shadow blur 4 spread 3 black 25%
+Title- inter semi-bold black
+Discription - inter regular black
+Button - border-radius 15px #6C705F white
+
+Footer component
+Logo
+Text - inter semi-bold black
+
+Slider
+Images - white background green
+Font - Katibeh
