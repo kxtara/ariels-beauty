@@ -14,7 +14,7 @@
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-
+- [Acknowledgments](#acknowledgments)
 ## Overview
 
 
@@ -42,3 +42,7 @@
 
 - Twitter - [@kiarahoheb](https://www.twitter.com/kiarahoheb)
 - LinkedIn - [@kiarahoheb](https://www.linkedin.com/in/kiara-hoheb-641157244/)
+
+## Acknowledgments
+
+I would like to give credit to [cupcakesandcashmere](https://cupcakesandcashmere.com/page/about) for inspiring me through their About page.
