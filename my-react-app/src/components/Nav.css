@@ -1,0 +1,35 @@
+.Nav header {
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #f8f8f8;
+}
+
+.Nav h1 {
+  font-family: "Lily Script One";
+  font-size: 1.5625rem;
+}
+
+.Nav h1 span {
+  margin-right: 1rem;
+  float: right;
+  color: rgb(108, 112, 95);
+}
+
+/* .Nav nav{
+display: block;    
+} */
+.Nav ul {
+  margin: auto;
+  font-family: "Katibeh";
+  font-size: 2rem;
+  text-align: center;
+  list-style: none;
+  background-color: rgba(108, 112, 95, 0.9);
+  color: #f8f8f8;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.Nav li:nth-child(1) {
+  padding-top: 12px;
+}
