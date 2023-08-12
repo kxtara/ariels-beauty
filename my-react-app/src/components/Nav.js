@@ -1,15 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
+import {Link} from 'react-router-dom'
 import "./Nav.css";
 
-const Nav = (props) => {
-  const { className } = props;
 
+const Nav = () => {
+  const [navVisible,setNavVisible] = useState(false)
+  function menu(){
+    setNavVisible(!navVisible)
+}
   return (
     <div className="Nav">
       <header>
         <h1>
           Ariel's Beauty
-          <span>
+          <span onClick={menu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -25,14 +29,19 @@ const Nav = (props) => {
             </svg>
           </span>
         </h1>
+
+        <div className={`element ${navVisible ? 'visible' : 'hidden'}`}>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Contact</li>
-            <li>About Us</li>
+            <li><Link to='/' className="nav-link">Home</Link></li>
+            <li><Link to='/services' className="nav-link">Services</Link></li>
+            <li><Link to='/contact' className="nav-link">Contact</Link></li>
+            <li><Link to='/about' className="nav-link">About Us</Link></li>
           </ul>
         </nav>
+        </div>
+        {/* } */}
+        
       </header>
     </div>
   );

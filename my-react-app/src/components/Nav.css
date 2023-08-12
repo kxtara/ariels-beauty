@@ -1,35 +1,63 @@
-.Nav header {
-  margin: 0;
-  padding: 0.5rem;
+ /* .Nav nav{
+  background-color: red;
+  
+ } */
+ .element {
+  opacity: 1;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.element.visible {
+  opacity: 1;
+  height: auto;
+}
+
+.element.hidden {
+  opacity: 0;
+  visibility: visible;
+}
+ .Nav header {
+  margin: -1rem 0 0 0;
+  padding-bottom: .1rem;
   background-color: #f8f8f8;
 }
 
 .Nav h1 {
+  padding: .7rem 0 0 .7rem;
   font-family: "Lily Script One";
   font-size: 1.5625rem;
 }
 
 .Nav h1 span {
-  margin-right: 1rem;
+  margin: .3rem .7rem 0 0;
   float: right;
   color: rgb(108, 112, 95);
 }
 
-/* .Nav nav{
-display: block;    
-} */
-.Nav ul {
+.Nav ul{
   margin: auto;
-  font-family: "Katibeh";
-  font-size: 2rem;
-  text-align: center;
   list-style: none;
   background-color: rgba(108, 112, 95, 0.9);
-  color: #f8f8f8;
-  letter-spacing: 3px;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Katibeh";
   font-weight: 600;
+  letter-spacing: 3px;
+  padding: 0;  
+  box-shadow: 0px 2px 3px 1px gray;
+} 
+
+.Nav li{
+  padding-top: 12px;
 }
 
-.Nav li:nth-child(1) {
-  padding-top: 12px;
+.nav-link{
+  text-decoration: none;
+  color: #f8f8f8;
+}
+
+.nav-link:hover{
+  color: rgb(39, 37, 37)
 }
