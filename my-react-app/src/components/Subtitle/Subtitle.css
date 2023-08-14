@@ -1,0 +1,24 @@
+.title h2{
+    color: #4D4D4D;
+    text-align: center;
+    font-family: "IM FELL FRENCH CANON SC";
+    font-size: 1.6875rem;
+}
+
+.title .line1{
+    position: relative;
+    top: 2.4rem;
+    left: 1rem;
+    background-color: #6C705F;
+    width: 4rem;
+    height: 3px;
+}
+
+.title .line2{
+    position: relative;
+    top: -2.54rem;
+    left: 19.5rem;
+    background-color: #6C705F;
+    width: 4rem;
+    height: 3px;
+}

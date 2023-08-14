@@ -1,8 +1,7 @@
- /* .Nav nav{
-  background-color: red;
-  
- } */
- .element {
+.menuX{
+  display: none;
+}
+.element {
   opacity: 1;
   height: 0;
   overflow: hidden;
@@ -16,12 +15,13 @@
 
 .element.hidden {
   opacity: 0;
-  visibility: visible;
 }
  .Nav header {
-  margin: -1rem 0 0 0;
-  padding-bottom: .1rem;
+  position: fixed;
+  width: 100%;
+  margin: -1rem 0 2rem 0;
   background-color: #f8f8f8;
+  z-index: 1;
 }
 
 .Nav h1 {
