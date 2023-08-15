@@ -5,6 +5,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import Nav from "../components/Navigation/Nav";
+import More from "../pages/More";
 function Menu() {
   return (
     <div>
@@ -15,6 +16,7 @@ function Menu() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/more" element={<More/>}/>
         </Routes>
       </Router>
     </div>
