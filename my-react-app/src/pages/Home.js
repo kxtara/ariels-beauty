@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import Subtitle from "../components/Subtitle/Subtitle";
 import Card from "../components/Card/Card";
+import Footer from "../components/Footer/Footer";
 import braidedpony from "../assets/images/braidedpony.jpg";
-import heroImage from "../assets/images/hero.jpg"
+import heroImage from "../assets/images/hero.jpg";
 function Home() {
   return (
     <div className="Home">
@@ -29,6 +30,7 @@ function Home() {
         description="Our in-house expert in braids will perfect that ponytail to
         Pinterest-worthy levels."
       />
+      <Footer />
     </div>
   );
 }
