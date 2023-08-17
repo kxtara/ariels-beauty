@@ -30,7 +30,7 @@ function Home() {
         description="Our in-house expert in braids will perfect that ponytail to
         Pinterest-worthy levels."
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

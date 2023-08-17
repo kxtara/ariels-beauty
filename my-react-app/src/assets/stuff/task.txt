@@ -1,20 +1,18 @@
 Navigation component (mobile-tablets)
-
 Background color - #F8F8F8
 Font - lily script one, black
 DropDown - background #6C705F
 Color - white
 Font- katibeh
+(Completed)
 
 	     (desktop)
-
 Background color - #F8F8F8
 Title - font lily script one
 Color - black
 Menu list - font katibeh
     
  Hero component
-
 Image - sized to screen
 Text - customized for tab
 Font - kameron

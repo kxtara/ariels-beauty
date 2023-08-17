@@ -1,7 +1,8 @@
 .Nav header {
   position: fixed;
   width: 100%;
-  margin: -1rem 0 2rem 0;
+  margin-top: -.4rem;
+  padding-bottom: .6rem;
   background-color: #f8f8f8;
   z-index: 1;
 }
@@ -19,7 +20,7 @@
 }
 
 .Nav ul {
-  margin: auto;
+  margin: .5rem auto auto auto;
   list-style: none;
   background-color: rgba(108, 112, 95, 0.9);
   text-align: center;
@@ -32,7 +33,7 @@
 }
 
 .Nav li {
-  padding-top: 12px;
+  padding-top: 7px;
 }
 
 .nav-link {

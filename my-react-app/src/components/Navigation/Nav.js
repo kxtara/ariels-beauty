@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Navigation/Nav.css";
 const Nav = () => {
+  // sets the variable menuIsVisible to a false state
   const [menuIsVisible, setMenuIsVisible] = useState(false);
+  // updates menuIsVisible
   const toggleVisibility = () => setMenuIsVisible(!menuIsVisible);
   return (
     <div className="Nav">
       <header>
         <h1>
           Ariel's Beauty
+          {/* toggles visibility between hamburger icon and X icon */}
           <span onClick={toggleVisibility}>
+          {/* Hamburger icon is set to false/true based on conditions */}
             {!menuIsVisible && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +29,7 @@ const Nav = () => {
                 />
               </svg>
             )}
+            {/* X icon is set to false/true based on conditions*/}
             {menuIsVisible && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +44,8 @@ const Nav = () => {
             )}
           </span>
         </h1>
-
         <div>
+        {/* opens/closes navigation base on condition */}
           {menuIsVisible && (
             <nav onClick={toggleVisibility}>
               <ul>

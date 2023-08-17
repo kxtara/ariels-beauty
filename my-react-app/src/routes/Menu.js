@@ -6,10 +6,11 @@ import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import Nav from "../components/Navigation/Nav";
 import More from "../pages/More";
+import Error from "../pages/404";
 function Menu() {
   return (
-    <div>
       <Router>
+      <div>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -17,9 +18,10 @@ function Menu() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
           <Route path="/more" element={<More/>}/>
+          <Route path="*" element={<Error />} />
         </Routes>
+        </div>
       </Router>
-    </div>
   );
 }
 export default Menu;
