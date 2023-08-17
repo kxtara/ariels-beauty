@@ -25,7 +25,7 @@
 
 ### Screenshot
 
-![ScreenShot](https://raw.github.com/kxtara/ariels-beauty/public/ScreenShot.png)
+![ScreenShot](https://raw.github.com/kxtara/ariels-beauty/ScreenShot.png)
 
 ## My process
 
