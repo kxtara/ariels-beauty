@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/More.css"
 function More() {
     return (
-        <div className="More">
+        <div className="pt-[16rem]">
             <h1>This is the More page</h1>
         </div>
     )

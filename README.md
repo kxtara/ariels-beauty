@@ -25,7 +25,7 @@
 
 ### Screenshot
 
-![ScreenShot](https://raw.github.com/kxtara/ariels-beauty/main/src/assests/images/ScreenShot.png)
+![ScreenShot](./my-react-app/src/assets/images/ScreenShot.png)
 
 ## My process
 

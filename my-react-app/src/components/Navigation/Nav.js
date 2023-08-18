@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../Navigation/Nav.css";
 const Nav = () => {
   // sets the variable menuIsVisible to a false state
   const [menuIsVisible, setMenuIsVisible] = useState(false);
@@ -8,11 +7,11 @@ const Nav = () => {
   const toggleVisibility = () => setMenuIsVisible(!menuIsVisible);
   return (
     <div className="Nav">
-      <header>
-        <h1>
+      <header className="fixed w-full -mt-[.4rem] pb-[.6rem] z-[1]">
+        <h1 className="bg-[#f8f8f8] pt-[.7rem] pr-0 pb-[.5rem] pl-[.7rem] font-['Lily_Script_One'] text-[1.5625rem]">
           Ariel's Beauty
           {/* toggles visibility between hamburger icon and X icon */}
-          <span onClick={toggleVisibility}>
+          <span className="mt-[.3rem] mr-6 ml-0 mb-0 float-right text-[#6c705f]" onClick={toggleVisibility}>
           {/* Hamburger icon is set to false/true based on conditions */}
             {!menuIsVisible && (
               <svg
@@ -44,28 +43,28 @@ const Nav = () => {
             )}
           </span>
         </h1>
-        <div>
+        <div className="bg-white -mt-2">
         {/* opens/closes navigation base on condition */}
           {menuIsVisible && (
             <nav onClick={toggleVisibility}>
-              <ul>
-                <li>
-                  <Link to="/" className="nav-link">
+              <ul className="mt-2 mx-[auto] mb-[auto] list-none bg-[#6c705fe6] text-center text-[2rem] font-['Katibeh'] font-semibold tracking-[3px] p-0 shadow-[0px_2px_3px_1px_rgba(0,0,0,.2)]">
+                <li className="pt-[7px]">
+                  <Link to="/" className="text-[#f8f8f8] hover:text-[#272525]">
                     Home
                   </Link>
                 </li>
-                <li>
-                  <Link to="/services" className="nav-link">
+                <li className="pt-[7px]">
+                  <Link to="/services" className="text-[#f8f8f8] hover:text-[#272525]">
                     Services
                   </Link>
                 </li>
-                <li>
-                  <Link to="/contact" className="nav-link">
+                <li className="pt-[7px]">
+                  <Link to="/contact" className="text-[#f8f8f8] hover:text-[#272525]">
                     Contact
                   </Link>
                 </li>
-                <li>
-                  <Link to="/about" className="nav-link">
+                <li className="pt-[7px]">
+                  <Link to="/about" className="text-[#f8f8f8] hover:text-[#272525]">
                     About Us
                   </Link>
                 </li>

@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/Services.css";
 function Services() {
     return (
-        <div className="Services">
+        <div className="pt-[16rem]">
         
             <h1>This is the Services page</h1>
         </div>
