@@ -1,5 +1,0 @@
-Green - #6C705F
-White - #F8F8F8
-Black - #000000
-Lighter Green - #545842 76%
-Light Gray - #1E1E1E1 43%
