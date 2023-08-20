@@ -17,6 +17,7 @@
 - [Acknowledgments](#acknowledgments)
 ## Overview
 
+This app consists of various technologies such as React, Tailwind CSS, and many more. The application primarily features two main functionalities: booking and payment. [Click here for a deeper insight into the process](./ariels-beauty-app/src/assets/stuff/process.md)
 
 
 ### The challenge
@@ -25,12 +26,16 @@
 
 ### Screenshot
 
-![ScreenShot](./my-react-app/src/assets/images/ScreenShot.png)
+![ScreenShot](./ariels-beauty-app/src/assets/images/ScreenShot.png)
 
 ## My process
 
 ### Built with
 
+- React
+- TailwindCSS
+- Mobile first workflow
+- Flexbox
 ### What I learned
 
 ### Continued development
