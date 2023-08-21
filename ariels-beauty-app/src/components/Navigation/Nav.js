@@ -28,7 +28,7 @@ const Nav = () => {
           onClick={toggleVisibility}
           className={menuIsVisible ? "fadeIn" : "fadeOut"}
         >
-          {/* Opens/closes navigation base on condition */}
+          {/* Opens/closes navigation based on condition */}
           {menuIsVisible && (
             <nav className="bg-[#6c705f] -mt-2">
               <ul className="mt-2 mx-[auto] mb-[auto] list-none text-center text-[2rem] font-['Katibeh'] font-semibold tracking-[3px] p-0 shadow-[0px_2px_3px_1px_rgba(0,0,0,.2)]">

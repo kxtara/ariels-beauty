@@ -13,7 +13,7 @@ This document outlines the step-by-step process of building and deploying this a
 
 ## Home
 
-For the most part, the home page is completed, but I've encountered a minor issue: the text in the hero section isn't displaying as I would prefer. I've experimented with relative units such as "rem" and percentages. Here's my solution:
+I've encountered two minor issues: the first one is that the text in the hero section isn't displaying as I would prefer. I've experimented with relative units like 'rem' and percentages. Here's my solution:
 
 ```css
 h3 {
@@ -23,6 +23,7 @@ h3 {
   width: 15rem;
 }
 ```
+And the second issue is related to the navigation transitions. While the fade-in transition is currently working as intended, the fade-out transition isn't functioning as expected.
 
 ## About
 
@@ -75,9 +76,7 @@ The Card component accepts multiple props: 'image', 'imageAlt', 'title', and 'de
 <img src={props.image} alt={props.imageAlt} />
 <h4>{props.title}</h4>
 <p>{props.description}</p>
-<Link to="/more">
-More
-</Link>
+<Link to="/more">More</Link>
 ```
 
 ### Footer
