@@ -22,14 +22,23 @@ function Card(props) {
       </p>
 
       {/* Changes the state of showMore */}
-      {!showMore ? <button
-        onClick={() => {
-          setShowMore(!showMore);
-        }}
-        className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px] mx-0 mt-8 mb-[1.2rem] font-bold text-xl px-12 py-[.4rem]"
->
-        More
-      </button> : <Link className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px] mx-0 mt-8 mb-[1.2rem] font-bold text-xl px-12 py-[.4rem]" to='/booking'>Book</Link>}
+      {!showMore ? (
+        <button
+          onClick={() => {
+            setShowMore(!showMore);
+          }}
+          className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px] mx-0 mt-8 mb-[1.2rem] font-bold text-xl px-12 py-[.4rem]"
+        >
+          More
+        </button>
+      ) : (
+        <div className="mt-8 mb-[1.2rem]">
+        {/* Link takes you to booking page lol */}
+          <Link className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]" to="/booking">Book</Link>
+          {/* Exit button to switch back to original display */}
+          <button onClick={() => {setShowMore(!showMore)}} className="rounded-[15px] font-bold text-lg text-red-600 px-[.4rem] ml-3 cursor-pointer bg-transparent border-2 border-red-600">X</button>
+        </div>
+      )}
     </div>
   );
 }

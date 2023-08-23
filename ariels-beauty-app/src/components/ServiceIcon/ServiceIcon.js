@@ -1,5 +1,4 @@
 import React from "react";
-
 function ServiceIcon({ icon, text, xAxis, yAxis, className,onClick }) {
   return (
     <div onClick={onClick}>
@@ -12,3 +11,34 @@ function ServiceIcon({ icon, text, xAxis, yAxis, className,onClick }) {
   );
 }
 export default ServiceIcon;
+
+// const test = [
+//   {
+//     onClick : ['Wash',washInfo],
+//     icon : wash,
+//     xAxis : -4,
+//     yAxis : -3,
+//     text : 'Wash'
+//   },
+//   {
+//     onClick : ['Install',installInfo],
+//     icon : install,
+//     xAxis : -58,
+//     yAxis : -35,
+//     text : 'Install'
+//   },
+//   {
+//     onClick : ['Braids',braidsInfo],
+//     icon : braids,
+//     xAxis : -18,
+//     yAxis : -13,
+//     text : 'Braids'
+//   },
+//   {
+//     onClick : ['Ponytail',ponytailInfo],
+//     icon : ponytail,
+//     xAxis : -8,
+//     yAxis : -8,
+//     text : 'Ponytail'
+//   }
+// ]
