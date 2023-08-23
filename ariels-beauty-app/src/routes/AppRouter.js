@@ -5,23 +5,23 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import Nav from "../components/Navigation/Nav";
-import More from "../pages/More";
+import Footer from "../components/Footer/Footer";
+import Booking from "../pages/Booking";
 import Error from "../pages/404";
-function Menu() {
+function AppRouter() {
   return (
       <Router>
-      <div>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/more" element={<More/>}/>
+          <Route path="/booking" element={<Booking/>}/>
           <Route path="*" element={<Error />} />
         </Routes>
-        </div>
+        <Footer />
       </Router>
   );
 }
-export default Menu;
+export default AppRouter;

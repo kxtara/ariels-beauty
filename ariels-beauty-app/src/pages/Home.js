@@ -30,6 +30,8 @@ function Home() {
         title="Braided Ponytail"
         description="Our in-house expert in braids will perfect that ponytail to
         Pinterest-worthy levels."
+        price = '$120'
+        detailedDescription = 'Our braided ponytail offers a simple yet elegant style that suits various occasions. For more intricate and elaborate designs, our pricing may vary depending on the level of intricacy and the additional time involved.'
       />
     </div>
   );

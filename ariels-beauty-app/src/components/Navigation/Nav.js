@@ -16,12 +16,12 @@ const Nav = () => {
             className="mr-6 mt-1 float-right text-[#6c705f]"
             onClick={toggleVisibility}
           >
-            {/* Hamburger icon is set to false/true based on conditions */}
-            {!menuIsVisible && (
+            {/* Displays the hamburger icon if menuIsVisibile is true otherwise X icon */}
+            {!menuIsVisible ? (
               <i className="bi bi-list w-8 cursor-pointer"></i>
+            ) : (
+              <i className="bi bi-x-lg w-8 cursor-pointer"></i>
             )}
-            {/* X icon is set to false/true based on conditions*/}
-            {menuIsVisible && <i className="bi bi-x-lg w-8 cursor-pointer"></i>}
           </span>
         </h1>
         <div

@@ -1,12 +1,10 @@
 import React from "react";
-import Menu from "./routes/Menu";
-import Footer from "./components/Footer/Footer";
+import AppRouter from "./routes/AppRouter";
 import './index.css'
 function App() {
   return (
     <div>
-      <Menu />
-      <Footer />
+      <AppRouter />
     </div>
   );
 }
