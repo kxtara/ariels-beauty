@@ -2,7 +2,7 @@
 
 This document outlines the step-by-step process of building and deploying this app.
 
-## Table of Contens
+## Table of Contents
 
 - [Home](#home)
 - [About](#about)
@@ -82,3 +82,7 @@ The Card component accepts multiple props: 'image', 'imageAlt', 'title', and 'de
 ### Footer
 
 The Footer component displays the logo, location, and phone number for the user.
+
+### ServiceCards
+
+### ServiceIcon

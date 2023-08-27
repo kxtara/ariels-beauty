@@ -4,7 +4,7 @@ import heroImage from "../../assets/images/hero.jpg";
 function Hero(props) {
   const { title , className } = props
   return (
-    <div className="relative">
+    <div className="relative flex items-center">
       <img
         className="w-full z-[-1] h-[16.9rem]"
         src={heroImage}

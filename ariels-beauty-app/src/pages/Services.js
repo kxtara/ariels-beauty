@@ -12,10 +12,11 @@ import {
   installInfo,
   braidsInfo,
   ponytailInfo,
+  featured
 } from "../components/ServiceCards/ServicesInfo";
 function Services() {
   const [title, setTitle] = useState("Popular Services");
-  const [service,setService] = useState(washInfo)
+  const [service,setService] = useState(featured)
   const hideIcons = (innerText,name) => {
     setTitle(innerText);
     setService(name)

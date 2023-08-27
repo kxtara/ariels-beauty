@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Subtitle from "../components/Subtitle/Subtitle";
-import Card from "../components/Card/Card";
-import braidedpony from "../assets/images/braidedpony.jpg";
 import heroImage from "../assets/images/hero.jpg";
+import ServiceCards from "../components/ServiceCards/ServiceCards";
+import { featured } from "../components/ServiceCards/ServicesInfo";
 function Home() {
   return (
     <div className="flex flex-col">
@@ -24,15 +24,7 @@ function Home() {
         </h3>
       </div>
       <Subtitle title="Featured Styles" />
-      <Card
-        image={braidedpony}
-        imageAlt="Woman with braided ponytail"
-        title="Braided Ponytail"
-        description="Our in-house expert in braids will perfect that ponytail to
-        Pinterest-worthy levels."
-        price = '$120'
-        detailedDescription = 'Our braided ponytail offers a simple yet elegant style that suits various occasions. For more intricate and elaborate designs, our pricing may vary depending on the level of intricacy and the additional time involved.'
-      />
+      <ServiceCards service={featured}/>
     </div>
   );
 }
