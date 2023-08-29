@@ -5,6 +5,10 @@ import wiginstall from "../../assets/images/wiginstall.jpg";
 import lacefront from "../../assets/images/lacefront.jpg";
 import boho from "../../assets/images/bohobraids.webp";
 import bun from "../../assets/images/Sleek-Side-Bun.webp";
+import wash from "../../assets/images/hair-washing.png";
+import install from "../../assets/images/install.png";
+import ponytail from "../../assets/images/ponytail.png";
+import braids from "../../assets/images/braid.png";
 const washInfo = [
   {
     title: "Wash",
@@ -117,7 +121,22 @@ const featured = [
     price: "$160",
     detailedDescription:
       "The process involves secure placement and blending to create a natural look, catering to various style preferences and needs, from fashion changes to hair loss solutions. Prices vary based on factors like complexity and special request.",
-  }
-]
+  },
+];
 
-export { washInfo, installInfo, braidsInfo, ponytailInfo, featured};
+const slideItems = [
+  { service: [wash, "Wash", washInfo] },
+  { service: [install, "Install", installInfo] },
+  { service: [ponytail, "Ponytail", ponytailInfo] },
+  { service: [braids, "Braids", braidsInfo] },
+  { service: [braids, "Braids", braidsInfo] },
+];
+
+export {
+  slideItems,
+  washInfo,
+  installInfo,
+  braidsInfo,
+  ponytailInfo,
+  featured,
+};
