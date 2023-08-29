@@ -4,7 +4,11 @@ import Subtitle from "../components/Subtitle/Subtitle";
 import heroImage from "../assets/images/hero.jpg";
 import ServiceCards from "../components/ServiceCards/ServiceCards";
 import { featured } from "../components/ServiceCards/ServicesInfo";
+import { useState } from "react";
 function Home() {
+  // will change display if more/X is clicked
+  const [showMore, setShowMore] = useState(false);
+  
   return (
     <div className="flex flex-col">
       <div className="relative">
@@ -24,7 +28,7 @@ function Home() {
         </h3>
       </div>
       <Subtitle title="Featured Styles" />
-      <ServiceCards service={featured}/>
+      <ServiceCards service={featured} showMore={showMore} setShowMore={setShowMore}/>
     </div>
   );
 }

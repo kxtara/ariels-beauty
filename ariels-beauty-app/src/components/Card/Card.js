@@ -1,9 +1,16 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-function Card(props) {
-  const { image, imageAlt, title, description, detailedDescription, price } =
-    props;
-  const [showMore, setShowMore] = useState(false);
+function Card({
+  image,
+  imageAlt,
+  title,
+  description,
+  detailedDescription,
+  price,
+  showMore,
+  setShowMore,
+}) {
+  const handleVisibility = () => setShowMore(!showMore);
+
   return (
     <div className="bg-[#fffdfd] border-[1px] border-[rgba(30, 30, 30, 43%)] rounded-[0.75rem] flex flex-col justify-center items-center w-[19rem] mx-[auto] mt-[auto] mb-8 font-['inter']">
       <img
@@ -24,19 +31,27 @@ function Card(props) {
       {/* Changes the state of showMore */}
       {!showMore ? (
         <button
-          onClick={() => {
-            setShowMore(!showMore);
-          }}
+          onClick={handleVisibility}
           className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px] mx-0 mt-8 mb-[1.2rem] font-bold text-xl px-12 py-[.4rem]"
         >
           More
         </button>
       ) : (
         <div className="mt-8 mb-[1.2rem]">
-        {/* Link takes you to booking page lol */}
-          <Link className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]" to="/booking">Book</Link>
+          {/* Link takes you to booking page lol */}
+          <Link
+            className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
+            to="/booking"
+          >
+            Book
+          </Link>
           {/* Exit button to switch back to original display */}
-          <button onClick={() => {setShowMore(!showMore)}} className="rounded-[15px] font-bold text-lg text-red-600 px-[.4rem] ml-3 cursor-pointer bg-transparent border-2 border-red-600">X</button>
+          <button
+            onClick={handleVisibility}
+            className="rounded-[15px] font-bold text-lg text-red-600 px-[.4rem] ml-3 cursor-pointer bg-transparent border-2 border-red-600"
+          >
+            X
+          </button>
         </div>
       )}
     </div>
