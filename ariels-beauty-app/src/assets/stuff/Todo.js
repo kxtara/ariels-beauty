@@ -15,9 +15,13 @@ Todo: 8/17/23 (Completed)
     • New Logo (Checked)
 
 Todo: 8/23/23
-    • //!Create slider
+    • Create slider (Checked)
     • Set up links for slider elements (Checked)
     • Create a button to change back from the book button (Checked)
     • Create array of objects to store info about styles (Checked)
     • Get images and descritions for cards (Checked)
+
+Todo: 8/28/23
+    • Write Process on Services page
+    • Continue Contact page
 */
