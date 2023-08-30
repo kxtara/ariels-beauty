@@ -1,7 +1,6 @@
-import React from "react";
-import heroImage from "../../assets/images/hero.jpg";
+import heroImage from "../assets/images/hero.jpg";
 
-function Hero(props) {
+export default function Hero(props) {
   const { title , className } = props
   return (
     <div className="relative flex items-center">
@@ -16,4 +15,3 @@ function Hero(props) {
     </div>
   );
 }
-export default Hero;

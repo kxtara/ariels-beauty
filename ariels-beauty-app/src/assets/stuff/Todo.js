@@ -22,6 +22,6 @@ Todo: 8/23/23
     • Get images and descritions for cards (Checked)
 
 Todo: 8/28/23
-    • Write Process on Services page
+    • Write Process on Services page (Checked)
     • Continue Contact page
 */

@@ -1,6 +1,5 @@
-import React from "react";
-import logo from "../../assets/images/logo.png";
-function Footer() {
+import logo from "../assets/images/logo.png";
+export default function Footer() {
   return (
     <div className="shadow-[inset_0_10px_5px_-9px_rgba(0,0,0,.55)]">
       <footer className="pt-2 flex flex-col items-center">
@@ -16,4 +15,3 @@ function Footer() {
     </div>
   );
 }
-export default Footer;

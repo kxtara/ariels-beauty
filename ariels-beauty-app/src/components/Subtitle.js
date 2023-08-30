@@ -1,5 +1,4 @@
-import React from "react";
-function Subtitle({title}){
+export default function Subtitle({title}){
     return(
         <div className="flex justify-center items-center gap-4 my-8 mx-0">
             <div className="bg-[#6C705F] w-12 h-[2px]"></div>
@@ -8,5 +7,3 @@ function Subtitle({title}){
         </div>
     )
 }
-
-export default Subtitle

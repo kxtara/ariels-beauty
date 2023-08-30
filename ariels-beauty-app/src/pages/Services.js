@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Hero from "../components/Hero/Hero";
-import Subtitle from "../components/Subtitle/Subtitle";
+import Hero from "../components/Hero";
+import Subtitle from "../components/Subtitle";
 import ServiceCards from "../components/ServiceCards/ServiceCards";
 import { featured,slideItems } from "../components/ServiceCards/ServicesInfo";
-import SplideSlider from "../components/Slider/Slider";
+import SplideSlider from "../components/Slider";
 
 function Services() {
   const [title, setTitle] = useState("Popular Services");
