@@ -8,11 +8,3 @@ function Booking() {
 }
 
 export default Booking
-
-/**
- 
-merchant id : vz62mwnz6tjnbbny
-public key : 9p5z98hkjjjrkhfk
-private key : e5877d962b104fc47d63c567fe3d9a21
-
- */
