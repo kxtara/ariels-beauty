@@ -1,9 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Subtitle from "../components/Subtitle";
 import ServiceCards from "../components/ServiceCards/ServiceCards";
 import { featured } from "../components/ServiceCards/ServicesInfo";
-import { useState } from "react";
 import Hero from "../components/Hero";
 function Home() {
   // will change display if more/X is clicked
