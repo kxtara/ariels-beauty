@@ -3,8 +3,8 @@ import Card from "../Card";
 
 function ServiceCards({ service, showMore, setShowMore }) {
   return (
-    <div>
-      {service.map((item, index) => (
+    <>
+      {service.map((item) => (
         <Card
           title={item.title}
           image={item.image}
@@ -12,12 +12,12 @@ function ServiceCards({ service, showMore, setShowMore }) {
           description={item.description}
           price={item.price}
           detailedDescription={item.detailedDescription}
-          key={index} // unique key for each Card component
+          key={item.id} // unique key for each Card component
           showMore={showMore} // Boolean indicating whether to show more details
           setShowMore={setShowMore} // Function to update the 'showMore' state
         />
       ))}
-    </div>
+    </>
   );
 }
 export default ServiceCards;

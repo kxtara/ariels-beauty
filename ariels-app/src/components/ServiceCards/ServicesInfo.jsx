@@ -11,6 +11,7 @@ import ponytail from "../../assets/images/ponytail.png";
 import braids from "../../assets/images/braid.png";
 const washInfo = [
   {
+    id  : 0,
     title: "Wash",
     image: hairwash,
     imageAlt: "lady getting her hair washed",
@@ -21,6 +22,7 @@ const washInfo = [
       "Customers booking this service must come with their hair combed out and WASHED. Their will be a $15 fee otherwise.",
   },
   {
+    id  : 1,
     title: "Luxury Deep Wash",
     image: hairwash,
     imageAlt: "lady getting her hair washed",
@@ -34,6 +36,7 @@ const washInfo = [
 
 const installInfo = [
   {
+    id  : 2,
     title: "Wig Install",
     image: wiginstall,
     imageAlt: "lady getting a wig installed",
@@ -44,6 +47,7 @@ const installInfo = [
       "The process involves secure placement and blending to create a natural look, catering to various style preferences and needs, from fashion changes to hair loss solutions. Prices vary based on factors like complexity and special request.",
   },
   {
+    id  : 3,
     title: "Lace Front",
     image: lacefront,
     imageAlt: "lady getting a lace front",
@@ -57,6 +61,7 @@ const installInfo = [
 
 const braidsInfo = [
   {
+    id  : 4,
     title: "Box Braids",
     image: boxbraid,
     imageAlt: "lady with box braids",
@@ -67,6 +72,7 @@ const braidsInfo = [
       "Box braids can vary in thickness, length, and color, allowing for a range of creative possibilities. This hairstyle not only offers a striking appearance but also helps in promoting hair health by minimizing manipulation and protecting your natural hair from environmental stressors.",
   },
   {
+    id  : 5,
     title: "Boho Braids",
     image: boho,
     imageAlt: "lady with braided ponytail",
@@ -80,6 +86,7 @@ const braidsInfo = [
 
 const ponytailInfo = [
   {
+    id  : 6,
     title: "Sleek Side Bun",
     image: bun,
     imageAlt: "lady with sleek side bun",
@@ -90,6 +97,7 @@ const ponytailInfo = [
       "The key to this style is its smooth and polished appearance. The hair is usually smoothed down and secured in a bun that sits either at the nape of the neck or slightly higher. This sleek look can be achieved with the help of styling products to tame flyaways and create a glossy finish. The side placement adds a touch of asymmetry and visual interest, making it a versatile choice for both formal events and more upscale everyday looks.",
   },
   {
+    id  : 7,
     title: "Braided Ponytail",
     image: braidedpony,
     imageAlt: "lady with box braids",
@@ -103,6 +111,7 @@ const ponytailInfo = [
 
 const featured = [
   {
+    id  : 8,
     title: "Braided Ponytail",
     image: braidedpony,
     imageAlt: "lady with box braids",
@@ -113,6 +122,7 @@ const featured = [
       "A braided ponytail offers a polished yet dynamic look, making it suitable for both casual and formal occasions.",
   },
   {
+    id  : 9,
     title: "Wig Install",
     image: wiginstall,
     imageAlt: "lady getting a wig installed",

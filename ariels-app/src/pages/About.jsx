@@ -26,15 +26,15 @@ function About() {
       <div className="font-['Grenze']">
         <span className="flex mb-7 justify-center">
           <img src={facebook} alt="facebook logo" className="w-8" />
-          <span className="mt-1 ml-3 text-lg font-bold">@arielsbeauty</span>
+          <a href="#" className="mt-1 ml-3 text-lg font-bold">@arielsbeauty</a>
         </span>
         <span className="flex mb-7 justify-center">
           <img src={twitter} alt="twitter logo" className="w-8" />
-          <span className="mt-1 ml-3 text-lg font-bold">@arielsbeauty</span>
+          <a href="#" className="mt-1 ml-3 text-lg font-bold">@arielsbeauty</a>
         </span>
         <span className="flex mb-7 justify-center">
           <img src={instagram} alt="instagram logo" className="w-8" />
-          <span className="mt-1 ml-3 text-lg font-bold">@arielsbeauty</span>
+          <a href="#" className="mt-1 ml-3 text-lg font-bold">@arielsbeauty</a>
         </span>
       </div>
     </>

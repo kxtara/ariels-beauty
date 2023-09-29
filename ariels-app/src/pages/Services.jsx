@@ -24,7 +24,7 @@ function Services() {
   
 
   return (
-    <div>
+    <>
       <Hero
         title="Our Services"
         className="text-3xl text-center top-1/2 left-16"
@@ -40,7 +40,7 @@ function Services() {
         showMore={showMore}
         setShowMore={setShowMore}
       />
-    </div>
+    </>
   );
 }
 
