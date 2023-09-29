@@ -1,19 +1,13 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 body {
+  scroll-behavior: smooth;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .fadeIn {
@@ -24,24 +18,3 @@ code {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
-
-/* ::-webkit-scrollbar {
-  height: 6px;
-}
-
-
-::-webkit-scrollbar-track {
-  background: #ffffff;
-}
- 
-
-::-webkit-scrollbar-thumb {
-  background: #6C705F;
-  border-radius:1rem;
-  
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #545842; 
-} */

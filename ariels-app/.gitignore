@@ -1,3 +1,6 @@
+# Private
+.env
+
 # Logs
 logs
 *.log
