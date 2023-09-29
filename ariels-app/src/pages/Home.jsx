@@ -9,7 +9,7 @@ function Home() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="flex flex-col">
+    <main className="flex flex-col">
       <Hero
         title="Celebrating the beauty of women, one strand at a time."
         className="absolute top-1/3 right-8 text-lg font-['Kameron'] font-bold text-right w-[15rem] text-[#f8f8f8d9]"
@@ -26,7 +26,7 @@ function Home() {
         showMore={showMore}
         setShowMore={setShowMore}
       />
-    </div>
+    </main>
   );
 }
 
