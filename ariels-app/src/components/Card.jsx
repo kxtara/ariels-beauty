@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 function Card({
   image,
@@ -5,10 +6,9 @@ function Card({
   title,
   description,
   detailedDescription,
-  price,
-  showMore,
-  setShowMore,
+  price
 }) {
+  const [showMore,setShowMore] = useState(false)
   const handleVisibility = () => setShowMore(!showMore);
 
   return (

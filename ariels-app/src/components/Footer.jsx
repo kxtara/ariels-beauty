@@ -1,8 +1,7 @@
 import logo from "../assets/images/logo.png";
 export default function Footer() {
   return (
-    <div className="shadow-[inset_0_10px_5px_-9px_rgba(0,0,0,.55)]">
-      <footer className="pt-2 flex flex-col items-center">
+      <footer className="pt-2 flex flex-col items-center shadow-[inset_0_10px_5px_-9px_rgba(0,0,0,.55)]">
         <img
           className="w-[2.5rem] pt-[2px]"
           src={logo}
@@ -12,6 +11,5 @@ export default function Footer() {
           Beverly Hills ca,00321 | 244-321-555
         </p>
       </footer>
-    </div>
   );
 }
