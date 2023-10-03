@@ -32,10 +32,12 @@ This app consists of various technologies such as React, Tailwind CSS, and many 
 
 ### Built with
 
-- React
+- React + Vite
 - TailwindCSS
 - Mobile first workflow
 - Flexbox
+- Splidejs
+- Emailjs
 ### What I learned
 
 ### Continued development
