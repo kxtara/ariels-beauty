@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Popup from "./Popup";
 
 export default function form() {
   const form = useRef();
@@ -20,71 +21,91 @@ export default function form() {
     );
   };
 
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const handleClick = () => setPopupOpen(true);
   return (
-    <form
-      className="flex flex-col justify-center items-center"
-      ref={form}
-      onSubmit={sendEmail}
-    >
-      <label
-        for="user_name"
-        className="-ml-[10rem] pb-2 font-semibold font-['Inter'] text-base"
+    <>
+      <Popup isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} />
+      <form
+        className="flex flex-col justify-center items-center"
+        ref={form}
+        onSubmit={sendEmail}
       >
-        Name
-      </label>
-      <input
-        type="text"
-        name="user_name"
-        placeholder="John Phillips"
-        className="border-[1px] w-[13rem] placeholder:pl-2 rounded-sm py-1"
-        required
-      />
+        <div className="border-b-2 pb-4 mb-6 w-[19rem]">
+          <label htmlFor="user_name" className="font-semibold text-[#4D4D4D]">
+            Name:
+          </label>
+          <input
+            type="text"
+            name="user_name"
+            placeholder="John Phillips"
+            className="placeholder: text-sm ml-7"
+            required
+          />
+        </div>
+        <div className="border-b-2 pb-4 mb-6 w-[19rem]">
+          <label htmlFor="email" className="font-semibold pr-12 text-[#4D4D4D]">
+            Email:
+          </label>
+          <input
+            type="email"
+            name="user_email"
+            placeholder="JohnPhillips@gmail.com"
+            className="placeholder: text-sm -ml-4"
+            required
+          />
+        </div>
+        <div className="border-b-2 pb-4 mb-6 w-[19rem]">
+          <label htmlFor="phone" className="font-semibold text-[#4D4D4D]">
+            Phone:
+          </label>
+          <input
+            type="tel"
+            name="user_phone"
+            placeholder="(234)-567-xxxx"
+            className="placeholder: text-sm ml-7"
+          />
+        </div>
+        <div className="border-b-2 pb-4 mb-6 w-[19rem]">
+          <label
+            htmlFor="inquiry"
+            className="font-semibold text-[#4D4D4D] mr-8"
+          >
+            Inquiry:
+          </label>
+          <select name="inquiry" className="text-gray-400 text-sm">
+            <option className=" text-sm">Choose one...</option>
+            <option>Cancel</option>
+            <option>Refund</option>
+            <option>Services</option>
+            <option>Other</option>
+          </select>
+        </div>
 
-      <label
-        for="email"
-        className="-ml-[10rem] mt-5 pb-2 font-semibold font-['Inter'] text-base"
-      >
-        Email
-      </label>
-      <input
-        type="email"
-        name="user_email"
-        placeholder="JohnPhillips@gmail.com"
-        className="border-[1px] w-[13rem] placeholder:pl-2 rounded-sm py-1"
-        required
-      />
-      <label
-        for="phone"
-        className="-ml-[10rem] mt-5 pb-2 font-semibold font-['Inter'] text-base"
-      >
-        Phone
-      </label>
-      <input
-        type="tel"
-        name="user_phone"
-        placeholder="234-567-8910"
-        className="border-[1px] w-[13rem] placeholder:pl-2 rounded-sm py-1"
-      />
-      <label
-        for="message"
-        className="-ml-[9rem] mt-5 pb-2 font-semibold font-['Inter'] text-base"
-        required
-      >
-        Message
-      </label>
-      <textarea
-        name="message"
-        row="8"
-        col="8"
-        className="border-[1px] w-[13rem] mb-14 placeholder:pl-2 rounded-sm"
-        placeholder="Enter message here..."
-        required
-      />
-      <input
-        className="border-[1px] w-[5rem] placeholder:pl-2 rounded-sm py-1 mb-4"
-        type="submit"
-        value="Send"
-      />
-    </form>
+        <div className="border-b-2 mb-11 w-[19rem]">
+          <label
+            htmlFor="message"
+            className="font-semibold text-[#4D4D4D]"
+            required
+          >
+            Message:
+          </label>
+          <textarea
+            name="message"
+            row="18"
+            col="18"
+            className="placeholder:text-sm placeholder:pl-1 block ml-[5rem] -mt-5"
+            placeholder="Enter message here..."
+            required
+          />
+        </div>
+        <input
+          onClick={handleClick}
+          className="border-[1px] rounded-md py-1 px-7 mb-11 bg-[#4D4D4D] text-white font-semibold"
+          type="submit"
+          value="SEND MESSAGE"
+        />
+      </form>
+    </>
   );
 }
