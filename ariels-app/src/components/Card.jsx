@@ -6,13 +6,12 @@ function Card({
   title,
   description,
   detailedDescription,
-  price
+  price,
 }) {
-  const [showMore,setShowMore] = useState(false)
+  const [showMore, setShowMore] = useState(false);
   const handleVisibility = () => setShowMore(!showMore);
-
   return (
-    <div className="bg-[#fffdfd] border-[1px] border-[rgba(30, 30, 30, 43%)] rounded-[0.75rem] flex flex-col justify-center items-center w-[19rem] mx-[auto] mt-[auto] mb-8 font-['inter']">
+    <div className="bg-[#fffdfd] border-[1px] border-[rgba(30, 30, 30, 43%)] rounded-[0.75rem] flex flex-col  justify-center items-center w-[19rem] mx-[auto] mt-[auto] mb-8 font-['inter'] md:w-[25rem]">
       <img
         className="w-[85%] mt-4 rounded-[0.3125rem]"
         src={image}
@@ -32,7 +31,7 @@ function Card({
       {!showMore ? (
         <button
           onClick={handleVisibility}
-          className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px] mx-0 mt-8 mb-[1.2rem] font-bold text-xl px-12 py-[.4rem]"
+          className="text-[#f8f8f8] bg-[rgb(108,112,95)] rounded-[15px] mx-0 mt-8 mb-[1.2rem] font-bold text-xl px-12 py-[.4rem]"
         >
           More
         </button>
@@ -41,7 +40,7 @@ function Card({
           {/* Link takes you to booking page lol */}
           <Link
             className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
-            to="/booking"
+            to={`/booking?title=${title}&price=${price}&image=${image}&imageAlt=${imageAlt}`}
           >
             Book
           </Link>
