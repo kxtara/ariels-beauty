@@ -25,5 +25,8 @@ Todo: 8/28/23
     • Write Process on Services page (Checked)
     
 Todo: 9/29/23 
-    • Continue Contact page
+    • Continue Contact page (Checked)
+Todo: 10/2/23
+    •  Work on desktop version
+    • Work on popup when form is submitted (Checked)
 */
