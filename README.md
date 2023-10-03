@@ -26,7 +26,7 @@ This app consists of various technologies such as React, Tailwind CSS, and many 
 
 ### Screenshot
 
-![ScreenShot](./ariels-beauty-app/src/assets/images/ScreenShot.png)
+![ScreenShot](./ariels-app/src/assets/images/ScreenShot.png)
 
 ## My process
 
