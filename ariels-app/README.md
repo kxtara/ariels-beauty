@@ -32,17 +32,31 @@ The ServiceCards component iterates over an array of service objects and display
 
 ## About
 
+The About page utilizes the `Subtitle` component to showcase information and links related to the owner.
 ## Contact
 
-For user inquiries, the Contact section provides relevant contact details. This section require the Hero component which accepts a 'title' prop.
+
+To address user inquiries, the Contact section features a form that has been implemented using `emailjs`. 
 
 ```jsx
-<Hero title='Contact' />
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(serviceId, templatId, form.current, publicKey).then(
+      (result) => {
+        console.log(result.text);
+        e.target.reset();
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
 ```
 
 ## Services
 
-In the Services section, users can explore the range of beauty services that's offered.
+In the Services section, there is a slider implemented with `splidejs` that allows users to click on it, rendering the corresponding service on the page using the `ServiceCards` component.
 
 ## ServiceCards Component(Revisited)
 
@@ -70,6 +84,7 @@ The Card component now includes a feature to show additional details about a ser
   description={item.description}
   price={item.price}
   detailedDescription={item.detailedDescription}
+  key = {item.id}
   showMore={showMore}
   setShowMore={setShowMore}
 />
@@ -81,40 +96,27 @@ Let's explore the custom components that make up Ariel's Beauty App.
 
 ### Navigation
 
-The Navigation component provides navigation links using React Router's `Link`. It also includes a dynamic menu toggle using `useState`.
+The Navigation component provides navigation links using React Router's `Link`.
 
-```js
-// Sets the variable menuIsVisible to a false state
-const [menuIsVisible, setMenuIsVisible] = useState(false);
-
-// Updates menuIsVisible
-const toggleVisibility = () => setMenuIsVisible(!menuIsVisible);
-
-// X icon is set to false/true based on condition
-{
-  menuIsVisible && <i className="bi bi-x-lg w-8"></i>;
-}
+```jsx
+<li> <Link to="/"> Home </Link> </li>
 ```
 
 `Link` was used to establish connections to various pages such as Home, About, and more, when clicked.
 
-```js
-<Link to="/"> Home </Link>
-```
-
 ### Hero
 
-The Hero component accepts a "title" prop, which it uses to display over an image.
+The Hero component accepts both a "title" and a "className" prop, utilizing them to display text over an image and apply custom styling, respectively.
 
 ```js 
-<Hero title='Contact'>
+<Hero title='Contact' className="mt-5 font-sans">
 ```
 
 ### Subtitle
 
 The Subtitle component accepts a "title" prop, which it uses to display the title between two lines.
 
-```js
+```jsx
 <Subtitle title="Discover Our Services" />
 ```
 
@@ -122,7 +124,7 @@ The Subtitle component accepts a "title" prop, which it uses to display the titl
 
 The Card component presents service information and includes a button to show more details or book the service.
 
-```js
+```jsx
 <Card
   title="Manicure & Pedicure"
   image={braids}
@@ -130,6 +132,7 @@ The Card component presents service information and includes a button to show mo
   description="Pamper your hands and feet with our luxurious manicure and pedicure services."
   price="$40"
   detailedDescription="Our expert technicians will treat your hands and feet with the care they deserve."
+  key= {1}
   showMore={showMore}
   setShowMore={setShowMore}
 />
@@ -155,9 +158,9 @@ The showMore prop is a boolean indicating whether to show more details about the
 
 The setShowMore prop is a function that updates the showMore state
 
-```js
+```jsx
 {
-  service.map((item, index) => (
+  service.map((item) => (
     <Card
       title={item.title}
       image={item.image}
@@ -165,7 +168,7 @@ The setShowMore prop is a function that updates the showMore state
       description={item.description}
       price={item.price}
       detailedDescription={item.detailedDescription}
-      key={index} // unique key for each Card component
+      key={item.id} // unique key for each Card component
       showMore={showMore} // Boolean indicating whether to show more details
       setShowMore={setShowMore} // Function to update the 'showMore' state
     />
@@ -175,14 +178,14 @@ The setShowMore prop is a function that updates the showMore state
 
 ### Slider
 
-The Slider Component uses Splidejs which is a lightweight, flexible and accessible slider/carousel written in TypeScript.
+The Slider Component uses `Splidejs` which is a lightweight, flexible and accessible slider/carousel written in TypeScript.
 
 The Slider Component takes in two props:
 
 - items - An array of items that will be displayed in the slider.
 - onItemClick - A function that will be triggered when an item in the slider is clicked.
 
-```js
+```jsx
 
 const splideOptions = {
     perPage: 4,
@@ -201,7 +204,7 @@ const splideOptions = {
         </SplideSlide>
       ))}
     </Splide>
-
+  )
 ```
 
 This component is designed to create a dynamic slider using the Splide library. Each slide displays an image and a label, and clicking on a slide triggers the onItemClick function while passing specific arguments from the item.service array.
