@@ -30,6 +30,8 @@ This app consists of various technologies such as React, Tailwind CSS, and many 
 
 ## My process
 
+My process began with the creation of a wireframe followed by a high-fidelity mock-up using Figma. Subsequently, I sought advice to refine my design before strategizing the selection of tools for the project. I opted for React with Vite and Tailwind CSS. Following this, I meticulously planned the components that should be separate entities, such as the header and footer. [Click here for a deeper insight into the process](./ariels-beauty-app/src/assets/stuff/process.md)
+
 ### Built with
 
 - React + Vite
@@ -38,12 +40,16 @@ This app consists of various technologies such as React, Tailwind CSS, and many 
 - Flexbox
 - Splidejs
 - Emailjs
+
 ### What I learned
 
 ### Continued development
 
+In the future, I plan to continue learning React and also embark on the journey of mastering the MERN stack to create full-stack applications.
 ### Useful resources
 
+- React.dev - [(https://react.dev/)]
+- W3Schools - [(https://www.w3schools.com/)]
 
 ## Author
 

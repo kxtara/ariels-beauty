@@ -3,34 +3,48 @@ import emailjs from "@emailjs/browser";
 import Popup from "./Popup";
 
 export default function form() {
+  // Create a reference to the form element
   const form = useRef();
+
+  // Fetch environment variables for email service configuration
   const serviceId = import.meta.env.VITE_REACT_APP_SERVICE_ID;
   const templatId = import.meta.env.VITE_REACT_APP_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_REACT_APP_PUBLIC_KEY;
-  const sendEmail = (e) => {
-    e.preventDefault();
 
+  // Function to handle form submission
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Send the form data using the emailjs library
     emailjs.sendForm(serviceId, templatId, form.current, publicKey).then(
       (result) => {
-        console.log(result.text);
-        e.target.reset();
+        console.log(result.text); // Log success message
+        e.target.reset(); // Reset the form
       },
       (error) => {
-        console.log(error.text);
+        console.log(error.text); // Log error message if sending fails
       }
     );
   };
 
+  // State to control the visibility of the popup component
   const [isPopupOpen, setPopupOpen] = useState(false);
+
+  // Function to open the popup
   const handleClick = () => setPopupOpen(true);
+
   return (
     <>
+      {/* Render the Popup component conditionally */}
       <Popup isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} />
+
+      {/* Render the contact form */}
       <form
         className="flex flex-col justify-center items-center"
         ref={form}
         onSubmit={sendEmail}
       >
+        {/* Name Input */}
         <div className="border-b-2 pb-4 mb-6 w-[19rem]">
           <label htmlFor="user_name" className="font-semibold text-[#4D4D4D]">
             Name:
@@ -43,6 +57,8 @@ export default function form() {
             required
           />
         </div>
+
+        {/* Email Input */}
         <div className="border-b-2 pb-4 mb-6 w-[19rem]">
           <label htmlFor="email" className="font-semibold pr-12 text-[#4D4D4D]">
             Email:
@@ -55,6 +71,8 @@ export default function form() {
             required
           />
         </div>
+
+        {/* Phone Input */}
         <div className="border-b-2 pb-4 mb-6 w-[19rem]">
           <label htmlFor="phone" className="font-semibold text-[#4D4D4D]">
             Phone:
@@ -66,6 +84,8 @@ export default function form() {
             className="placeholder: text-sm ml-7"
           />
         </div>
+
+        {/* Inquiry Option */}
         <div className="border-b-2 pb-4 mb-6 w-[19rem]">
           <label
             htmlFor="inquiry"
@@ -82,6 +102,7 @@ export default function form() {
           </select>
         </div>
 
+        {/* Message Text */}
         <div className="border-b-2 mb-11 w-[19rem]">
           <label
             htmlFor="message"
@@ -99,6 +120,8 @@ export default function form() {
             required
           />
         </div>
+
+        {/* Submit Button */}
         <input
           onClick={handleClick}
           className="border-[1px] rounded-md py-1 px-7 mb-11 bg-[#4D4D4D] text-white font-semibold"

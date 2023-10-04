@@ -6,6 +6,7 @@ const Header = () => {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   // Updates menuIsVisible
   const toggleVisibility = () => setMenuIsVisible(!menuIsVisible);
+
   return (
       <header className="fixed w-full -mt-[.4rem] pb-[.6rem] z-[1]">
         <h1 className="bg-[#f8f8f8] pt-[.7rem] pr-0 pb-[.5rem] pl-[.7rem] font-['Lily_Script_One'] text-[1.5625rem]">
@@ -23,6 +24,7 @@ const Header = () => {
             )}
           </span>
         </h1>
+        {/* Hamburger Menu */}
         <Navigation toggleVisibility={toggleVisibility} menuIsVisible={menuIsVisible}/>
       </header>
   );

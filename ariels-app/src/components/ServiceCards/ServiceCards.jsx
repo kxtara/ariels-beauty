@@ -4,6 +4,7 @@ import Card from "../Card";
 function ServiceCards({ service, showMore, setShowMore }) {
   return (
     <>
+    {/* mapping over the service array */}
       {service.map((item) => (
         <Card
           title={item.title}

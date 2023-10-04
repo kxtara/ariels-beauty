@@ -1,6 +1,8 @@
 export default function Popup({ isPopupOpen, setPopupOpen }) {
   const handleClick = () => setPopupOpen(false);
+  
   return (
+    // displays a popup after a form is clicked
     isPopupOpen && (
       <div
         className={`flex flex-col bg-[#4D4D4D] text-white items-center w-[15rem] py-4 ml-3 relative -top-[20.4rem] left-[9rem]`}

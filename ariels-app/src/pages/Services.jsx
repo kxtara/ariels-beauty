@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Hero from "../components/Hero";
 import Subtitle from "../components/Subtitle";
 import ServiceCards from "../components/ServiceCards/ServiceCards";
-import { featured,slideItems } from "../components/ServiceCards/ServicesInfo";
+import { featured, slideItems } from "../components/ServiceCards/ServicesInfo";
 import SplideSlider from "../components/Slider";
 
 function Services() {
@@ -21,8 +21,6 @@ function Services() {
     setShowMore(false);
   };
 
-  
-
   return (
     <>
       <Hero
@@ -30,7 +28,7 @@ function Services() {
         className="text-3xl text-center top-1/2 left-16"
       />
       <section className="py-2 -mb-3 mt-3">
-      {/* items takes in an array of objects */}
+        {/* items takes in an array of objects */}
         <SplideSlider items={slideItems} onItemClick={handleSliderItem} />
       </section>
       <Subtitle title={title} />

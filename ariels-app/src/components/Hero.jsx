@@ -1,7 +1,6 @@
 import heroImage from "../assets/images/hero.jpg";
 
-export default function Hero(props) {
-  const { title , className } = props
+export default function Hero({title,className}) {
   return (
     <div className="relative flex items-center">
       <img

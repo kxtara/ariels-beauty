@@ -7,9 +7,6 @@ export default function Booking() {
     searchParams.entries()
   );
 
-  const onChange = (e) => {
-    setDate(date);
-  };
   return (
     <>
       <Hero title="hello" />
