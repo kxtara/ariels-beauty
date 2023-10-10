@@ -40,7 +40,7 @@ function Card({
           {/* Link takes you to booking page & passes some props */}
           <Link
             className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
-            to={`/booking?title=${title}&price=${price}&image=${image}&imageAlt=${imageAlt}`}
+            to={`/booking?title=${title}&price=${price}&image=${image}&imageAlt=${imageAlt}&description=${detailedDescription}`}
           >
             Book
           </Link>
