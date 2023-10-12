@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { getDay, setHours, setMinutes, format } from "date-fns";
+import Confirmation from "./Confirmation";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -9,6 +10,31 @@ export default function Calendar({ deposit }) {
   const [startDate, setStartDate] = useState(
     setHours(setMinutes(new Date(), 0), 7)
   );
+
+  // Initialize state for available time slots
+  const [timeSlots, setTimeSlots] = useState([]);
+
+    // State to control the visibility of the popup component
+    const [isPopupOpen, setPopupOpen] = useState(false);
+
+
+  // This effect recalculates available time slots when the selected date changes.
+  useEffect(() => {
+    const times = [];
+
+    // Loop that pushes available time slots to an array
+    for (let i = 7; i < 20; i++) {
+      if (i !== 12 && i !== 13) {
+
+        // Create Date objects for each selectable time and add them to the array
+        let time = setHours(setMinutes(startDate, 0), i);
+
+        // If you push a formatted string you'll get an error because `includeTimes` is expecting a date object not a string
+        times.push(time);
+      }
+    }
+    setTimeSlots(times);
+  }, [startDate.toDateString()]); // Execute when the date part of startDate changes, if you just pass in `startDate` it'll run anytime the time is changed
 
   // calculate the first day of the month
   const firstDayOfMonth = new Date(
@@ -24,41 +50,24 @@ export default function Calendar({ deposit }) {
     0
   );
 
-  // Function to filter available times
-  const filterTime = () => {
-    // Create an array to store distinct Date objects for each selectable time
-    const includeTimes = [];
-
-    // Loop through hours from 7 AM to 7 PM (excluding 12 PM and 1 PM)
-    for (let i = 7; i < 20; i++) {
-      if (i !== 12 && i !== 13) {
-        // Create Date objects for each selectable time and add them to the array
-        let time = setHours(setMinutes(new Date(), 0), i)
-        includeTimes.push(format(time,"MMM EEE d, yyyy - h:mm aa"));
-      }
-    }
-    console.log(includeTimes)
-    return includeTimes;
-  };
-
   // Function to filter weekdays (exclude weekends)
   const isWeekday = (date) => {
     const day = getDay(date);
     return day !== 0 && day !== 6; // Returns true for weekdays (Monday to Friday)
   };
 
-  // Function to handle button click and display a confirmation message
-  const handleClick = (e) => {
-    e.preventDefault();
-
     // Format the selected date, time, and month using date-fns
     const formattedTime = format(startDate, "MMM EEE d, yyyy - h:mm aa");
 
+  // Function to handle button click and display a confirmation message
+  const handleClick = (e) => {
+    e.preventDefault();
+    
+
+
     // Display a confirmation alert with the formatted date and time
     if (!deposit) {
-      alert(
-        `Your appointment on ${formattedTime} has been successfully booked.`
-      );
+      setPopupOpen(true)
     } else {
       console.log(formattedTime);
     }
@@ -66,6 +75,7 @@ export default function Calendar({ deposit }) {
 
   return (
     <>
+    {isPopupOpen && <Confirmation isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} booking={formattedTime}/>}
       <DatePicker
         minDate={firstDayOfMonth}
         maxDate={lastDayOfMonth}
@@ -78,7 +88,7 @@ export default function Calendar({ deposit }) {
         filterDate={isWeekday} // Disable weekends
         withPortal // Display the calendar as a popup
         portalId="root-portal"
-        includeTimes={filterTime()} // Include the filtered times
+        includeTimes={timeSlots} // Include the filtered times
         value={startDate} // Set the initial input value
       />
       {deposit ? (
