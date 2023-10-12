@@ -48,8 +48,8 @@ My process began with the creation of a wireframe followed by a high-fidelity mo
 In the future, I plan to continue learning React and also embark on the journey of mastering the MERN stack to create full-stack applications.
 ### Useful resources
 
-- React.dev - [(https://react.dev/)]
-- W3Schools - [(https://www.w3schools.com/)]
+- [React.dev](https://react.dev/)
+- [W3Schools](https://www.w3schools.com/)
 
 ## Author
 
