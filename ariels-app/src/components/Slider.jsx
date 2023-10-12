@@ -11,7 +11,7 @@ export default function SplideSlider({ items, onItemClick }) {
 
   return (
     // Create a Splide slider with specified options
-    <Splide options={splideOptions} className="flex">
+    <Splide options={splideOptions} className="flex z-0">
       {items.map((item, index) => (
         // Create a slide for each item in the 'items' array
         <SplideSlide key={index}>
