@@ -25,7 +25,7 @@
     • Work on excluding dates/times on calendar after a user clicks pay (most likely exclude date/time after user pays - disable while user is on payment page, if user doesn't pay after a certain time enable date/time)
     
     • Figure out how to customize the calendar (Checked)
-    • Work on styling for the booking page
+Todo   • Work on styling for the booking page
    //* • Research payment library (stripe)
    • When a user navigates to another page close the navigation if left open
    • After a user that doesn't require a deposit confirms their booking direct them to the home page (maybe)
