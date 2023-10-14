@@ -4,6 +4,7 @@ import { getDay, setHours, setMinutes, format } from "date-fns";
 import Confirmation from "./Confirmation";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from "react-router-dom";
 
 export default function Calendar({ deposit }) {
   // Initialize state for the selected date and time
@@ -59,7 +60,7 @@ export default function Calendar({ deposit }) {
 
   // Function to handle button click and display a confirmation message
   const handleClick = () =>
-    !deposit ? setPopupOpen(true) : console.log(formattedTime);
+    deposit ?  console.log(formattedTime) : setPopupOpen(true);
 
   return (
     <>
@@ -86,13 +87,14 @@ export default function Calendar({ deposit }) {
         value={startDate} // Set the initial input value
       />
       {deposit ? (
-        <button
-          type="submit"
-          className="border-[1px] px-11 py-1 rounded-md flex m-auto mb-8 text-white bg-[#6C705F]"
-          onClick={handleClick}
+        <Link
+          // type="submit"
+          className="border-[1px] py-1 px-5 rounded-md flex m-auto mb-8 text-white bg-[#6C705F] w-[4.2rem]"
+          // onClick={handleClick}
+          to={`/payment?date=${formattedTime}&deposit=${deposit}`}
         >
           Pay
-        </button>
+        </Link>
       ) : (
         <button
           type="button"
