@@ -14,9 +14,8 @@ export default function Calendar({ deposit }) {
   // Initialize state for available time slots
   const [timeSlots, setTimeSlots] = useState([]);
 
-    // State to control the visibility of the popup component
-    const [isPopupOpen, setPopupOpen] = useState(false);
-
+  // State to control the visibility of the popup component
+  const [isPopupOpen, setPopupOpen] = useState(false);
 
   // This effect recalculates available time slots when the selected date changes.
   useEffect(() => {
@@ -25,7 +24,6 @@ export default function Calendar({ deposit }) {
     // Loop that pushes available time slots to an array
     for (let i = 7; i < 20; i++) {
       if (i !== 12 && i !== 13) {
-
         // Create Date objects for each selectable time and add them to the array
         let time = setHours(setMinutes(startDate, 0), i);
 
@@ -56,26 +54,22 @@ export default function Calendar({ deposit }) {
     return day !== 0 && day !== 6; // Returns true for weekdays (Monday to Friday)
   };
 
-    // Format the selected date, time, and month using date-fns
-    const formattedTime = format(startDate, "MMM EEE d, yyyy - h:mm aa");
+  // Format the selected date, time, and month using date-fns
+  const formattedTime = format(startDate, "MMM EEE d, yyyy - h:mm aa");
 
   // Function to handle button click and display a confirmation message
-  const handleClick = (e) => {
-    e.preventDefault();
-    
-
-
-    // Display a confirmation alert with the formatted date and time
-    if (!deposit) {
-      setPopupOpen(true)
-    } else {
-      console.log(formattedTime);
-    }
-  };
+  const handleClick = () =>
+    !deposit ? setPopupOpen(true) : console.log(formattedTime);
 
   return (
     <>
-    {isPopupOpen && <Confirmation isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} booking={formattedTime}/>}
+      {isPopupOpen && (
+        <Confirmation
+          isPopupOpen={isPopupOpen}
+          setPopupOpen={setPopupOpen}
+          booking={formattedTime}
+        />
+      )}
       <DatePicker
         minDate={firstDayOfMonth}
         maxDate={lastDayOfMonth}
