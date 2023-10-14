@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Booking from "../pages/Booking";
 import Error from "../pages/404";
+import Payment from "../pages/payment";
 function AppRouter() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function AppRouter() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
