@@ -28,5 +28,5 @@
 Todo   • Work on styling for the booking page
    //* • Research payment library (stripe)
    • When a user navigates to another page close the navigation if left open
-   • After a user that doesn't require a deposit confirms their booking direct them to the home page (maybe)
+   • After a user that doesn't require a deposit confirms their booking direct them to the home page (maybe) (Checked - popup)
 */
