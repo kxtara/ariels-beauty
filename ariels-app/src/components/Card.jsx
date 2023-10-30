@@ -40,14 +40,14 @@ function Card({
           {/* Link takes you to booking page & passes some props */}
           <Link
             className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
-            to={`/booking?title=${title}&price=${price}&image=${image}&imageAlt=${imageAlt}`}
+            to={`/booking?title=${title}&price=${price}&image=${encodeURIComponent(image)}&imageAlt=${imageAlt}`}
           >
             Book
           </Link>
           {/* Exit button to switch back to original display */}
           <button
             onClick={handleVisibility}
-            className="rounded-[15px] font-bold text-lg text-red-600 px-[.4rem] ml-3 cursor-pointer bg-transparent border-2 border-red-600"
+            className="rounded-[15px] font-bold text-base text-red-600 px-[.4rem] ml-3 cursor-pointer bg-transparent border-2 border-red-600 relative -top-[.1rem]"
           >
             X
           </button>
