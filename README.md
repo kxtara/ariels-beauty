@@ -34,10 +34,11 @@ My process began with the creation of a wireframe followed by a high-fidelity mo
 
 ### Built with
 
-- React + Vite
+- React 
+- React-Calendar
+- Vite
+- Firebase
 - TailwindCSS
-- Mobile first workflow
-- Flexbox
 - Splidejs
 - Emailjs
 
@@ -46,10 +47,12 @@ My process began with the creation of a wireframe followed by a high-fidelity mo
 ### Continued development
 
 In the future, I plan to continue learning React and also embark on the journey of mastering the MERN stack to create full-stack applications.
+
 ### Useful resources
 
 - [React.dev](https://react.dev/)
 - [W3Schools](https://www.w3schools.com/)
+- [PedroTech](https://www.youtube.com/watch?v=2hR-uWjBAgw)
 
 ## Author
 
@@ -58,4 +61,6 @@ In the future, I plan to continue learning React and also embark on the journey 
 
 ## Acknowledgments
 
-I would like to give credit to [cupcakesandcashmere](https://cupcakesandcashmere.com/page/about) for inspiring me through their About page.
+- I would like to give credit to [cupcakesandcashmere](https://cupcakesandcashmere.com/page/about) for inspiring me through their About page.
+
+- PedroTech's youtube video [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw),was instrumental in helping me grasp the fundamentals of Firebase. Subsequently, I conducted further research and implemented my own solutions to achieve my desired output.
