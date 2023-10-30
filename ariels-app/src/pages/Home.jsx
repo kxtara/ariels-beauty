@@ -1,14 +1,13 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Subtitle from "../components/Subtitle";
-import ServiceCards from "../components/ServiceCards/ServiceCards";
-import { featured } from "../components/ServiceCards/ServicesInfo";
+import ServiceCards from "../components/ServiceCards";
 import Hero from "../components/Hero";
 function Home() {
   // will change display if more/X is clicked
   const [showMore, setShowMore] = useState(false);
-
   return (
+    <>
     <main className="flex flex-col">
       <Hero
         title="Celebrating the beauty of women, one strand at a time."
@@ -22,11 +21,12 @@ function Home() {
       </Link>
       <Subtitle title="Featured Styles" />
       <ServiceCards
-        service={featured}
+        service='Featured'
         showMore={showMore}
         setShowMore={setShowMore}
       />
     </main>
+    </>
   );
 }
 
