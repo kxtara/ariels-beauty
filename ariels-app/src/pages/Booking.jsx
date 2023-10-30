@@ -13,8 +13,9 @@ export default function Booking() {
     searchParams.entries()
   );
 
+
   // Calculate the deposit amount based on the price.
-  const deposit = () => {
+  const BookedDeposit = () => {
     if (typeof price !== "number") {
       let regex = /[0-9]/g;
       let match = parseInt(price.match(regex).join(""));
@@ -25,10 +26,9 @@ export default function Booking() {
   };
 
   // Terms
-  const terms = () => {
+  const termsAndServices = () => {
     return title !== 'Wash' ? 'Please arrive on time with clean,washed hair for the best results. We understand that unexpected delays can occur, so there is a 15-minute grace period for late arrivals.' : 'We understand that unexpected delays can occur, so there is a 15-minute grace period for late arrivals.'
   }
-
   // Render the Booking component.
   return (
     <>
@@ -44,15 +44,16 @@ export default function Booking() {
         <img className="w-[100%] mt-5" src={image} alt={imageAlt} />
           <h3 className="mt-4">
             {/* Display the deposit amount */}
-            <span className="font-semibold">{deposit()}</span>
+            <span className="font-semibold">{BookedDeposit()}</span>
           </h3>
           <p className="font-thin text-xs mt-2">
             {/* Display "Terms:" */}
             <span className="font-semibold mt-2 pr-2">Terms:</span>
-            {terms()}
+            {termsAndServices()}
           </p>
       </div>
-      <Calendar deposit={deposit()}/>
+      <h3 className="text-xs text-center mt-10 font-bold -mb-2">Choose date and time here:</h3>
+      <Calendar deposit={BookedDeposit}/>
     </>
   );
 }
