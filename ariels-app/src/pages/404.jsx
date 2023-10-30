@@ -1,6 +1,9 @@
 import React from "react";
+import Hero from "../components/Hero"
 function Error(){
-    return(<div className="pt-[16rem]">
-    <h1>Error this page isn't available</h1></div>)
+
+    return(<>
+        <Hero title='testing database'/>
+    </>)
 }
 export default Error
