@@ -60,7 +60,7 @@ export default function Calendar({ deposit }) {
 
   // Function to handle button click and display a confirmation message
   const handleClick = () =>
-    deposit ?  console.log(formattedTime) : setPopupOpen(true);
+    deposit ? console.log(formattedTime) : setPopupOpen(true);
 
   return (
     <>
@@ -88,9 +88,7 @@ export default function Calendar({ deposit }) {
       />
       {deposit ? (
         <Link
-          // type="submit"
           className="border-[1px] py-1 px-5 rounded-md flex m-auto mb-8 text-white bg-[#6C705F] w-[4.2rem]"
-          // onClick={handleClick}
           to={`/payment?date=${formattedTime}&deposit=${deposit}`}
         >
           Pay
