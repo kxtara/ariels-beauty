@@ -18,6 +18,12 @@ export default function Calendar({ deposit }) {
   // State to control the visibility of the popup component
   const [isPopupOpen, setPopupOpen] = useState(false);
 
+  // Initialize state to disable/enable a date and time whether a customer completes payment
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  // Initialize state to track paid time slots
+  const [paidTimeSlots,setPaidTimeSlots] = useState([])
+
   // This effect recalculates available time slots when the selected date changes.
   useEffect(() => {
     const times = [];
@@ -33,7 +39,14 @@ export default function Calendar({ deposit }) {
       }
     }
     setTimeSlots(times);
-  }, [startDate.toDateString()]); // Execute when the date part of startDate changes, if you just pass in `startDate` it'll run anytime the time is changed
+  }, []);
+
+
+ const handlePaymentSuccess = () => {
+  // Update paidTimeSlots with the selected time on the selected day
+  setPaidTimeSlots([...paidTimeSlots,startDate])
+  setIsDisabled(true)
+ }
 
   // calculate the first day of the month
   const firstDayOfMonth = new Date(
@@ -51,8 +64,11 @@ export default function Calendar({ deposit }) {
 
   // Function to filter weekdays (exclude weekends)
   const isWeekday = (date) => {
+    const currentDay = new Date().getDate() // Get the current y of the month
     const day = getDay(date);
-    return day !== 0 && day !== 6; // Returns true for weekdays (Monday to Friday)
+
+    // Disable weekends and days before the current day
+    return day !== 0 && day !== 6 && date.getDate() > currentDay;
   };
 
   // Format the selected date, time, and month using date-fns
@@ -84,12 +100,14 @@ export default function Calendar({ deposit }) {
         withPortal // Display the calendar as a popup
         portalId="root-portal"
         includeTimes={timeSlots} // Include the filtered times
+        excludeTimes={isDisabled ? paidTimeSlots.filter((time) => time.getDate() === startDate.getDate()) : []} // Exclude only the selected time on the selected day
         value={startDate} // Set the initial input value
       />
       {deposit ? (
         <Link
-          className="border-[1px] py-1 px-5 rounded-md flex m-auto mb-8 text-white bg-[#6C705F] w-[4.2rem]"
+          className="border-[1px] py-1 px-5 rounded-md flex m-auto mb-8 text-white bg-[#6C705F] w-[4.2rem] md:w-[8rem] md:pl-12 md:text-center md:text-lg"
           to={`/payment?date=${formattedTime}&deposit=${deposit}`}
+          onClick={handlePaymentSuccess}
         >
           Pay
         </Link>

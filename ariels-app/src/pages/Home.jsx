@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import { Link } from "react-router-dom";
 import Subtitle from "../components/Subtitle";
 import ServiceCards from "../components/ServiceCards";
@@ -14,7 +14,7 @@ function Home() {
         className="absolute top-1/3 right-8 text-lg font-['Kameron'] font-bold text-right w-[15rem] text-[#f8f8f8d9]"
       />
       <Link
-        className="mt-2 ml-24 block font-black font-['inter'] text-center w-36 p-[.4rem] bg-[#545842c2] rounded-2xl hover:text-[#272525] absolute top-44 right-8 text-lg text-[#f8f8f8d9]"
+        className="mt-2 ml-24 block font-black font-['inter'] text-center w-36 p-[.4rem] bg-[#545842c2] rounded-2xl hover:text-[#272525] absolute top-44 right-8 text-lg text-[#f8f8f8d9] md:mt-7"
         to="/services"
       >
         Our Services

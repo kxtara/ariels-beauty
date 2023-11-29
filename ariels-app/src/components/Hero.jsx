@@ -8,7 +8,7 @@ export default function Hero({title,className}) {
         src={heroImage}
         alt="Two ladies with their eyes closed"
       />
-      <h3 className={`absolute font-['Kameron'] font-bold w-[15rem] text-[#f8f8f8d9] ${className}`}>
+      <h3 className={`absolute font-['Kameron'] font-bold w-[15rem] text-[#f8f8f8d9] ${className} md:text-2xl md:w-[18rem]`}>
         {title}
       </h3>
     </div>

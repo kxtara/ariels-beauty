@@ -7,7 +7,7 @@ export default function Footer() {
           src={logo}
           alt="Ariel's beauty logo"
         />
-        <p className="py-[10px] font-bold font-['inter'] text-xs">
+        <p className="py-[10px] font-bold font-['inter'] text-xs md:mb-11">
           Beverly Hills ca,00321 | 244-321-555
         </p>
       </footer>

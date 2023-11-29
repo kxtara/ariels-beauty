@@ -14,19 +14,19 @@ export default function SplideSlider({ items, onItemClick }) {
 
   return (
     // Create a Splide slider with specified options
-    <Splide options={splideOptions} className="flex z-0">
+    <Splide options={splideOptions} >
       {filteredItems.map((item, index) => {
         // Create a slide for each item in the 'items' array
         return (
           <SplideSlide key={index}>
-            <div onClick={() => onItemClick(item.service[1])}>
+            <div onClick={() => onItemClick(item.service[1])} className="md:pl-9">
             {/* display a logo with the name of the service */}
               <img
-                className="bg-[#6C705F] rounded-[6rem] w-[4rem] h-[4rem] p-3 ml-4 cursor-grab"
+                className={`bg-[#6C705F] rounded-[6rem] w-[4rem] h-[4rem] p-3 ml-4 cursor-grab md:h-20 md:w-20 lg:h-28 lg:w-28`}
                 src={item.service[0]}
                 alt={`${item.service[1]} logo`}
               />
-              <p className="font-bold font-['Katibeh'] ml-[1.76rem]">
+              <p className={`font-bold font-['Katibeh'] ml-[1.89rem] md:text-xl lg:text-3xl pt-2 md:ml-[2.199rem] lg:ml-[2.48rem]`}>
                 {item.service[1]}
               </p>
             </div>

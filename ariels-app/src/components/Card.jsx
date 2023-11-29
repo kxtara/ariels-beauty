@@ -17,13 +17,13 @@ function Card({
         src={image}
         alt={imageAlt}
       />
-      <h4 className="mt-4 w-[84%] font-bold uppercase">{title}</h4>
+      <h4 className="mt-4 w-[84%] font-bold uppercase md:text-lg">{title}</h4>
 
       {/* Display the price only when showMore is true */}
-      {showMore && <h3 className="w-[84%] font-bold ">{price}</h3>}
+      {showMore && <h3 className="w-[84%] font-bold">{price}</h3>}
 
       {/* Display the detailedDescrition only when showMore is true */}
-      <p className="mt-4 w-[84%] pl-1 font-medium">
+      <p className="mt-4 w-[84%] pl-1 font-medium md:text-lg">
         {!showMore ? description : detailedDescription}
       </p>
 
@@ -42,7 +42,7 @@ function Card({
             className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
             to={`/booking?title=${title}&price=${price}&image=${encodeURIComponent(image)}&imageAlt=${imageAlt}`}
           >
-            Book
+            Book Now
           </Link>
           {/* Exit button to switch back to original display */}
           <button

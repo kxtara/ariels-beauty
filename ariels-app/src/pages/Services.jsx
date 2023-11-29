@@ -33,12 +33,15 @@ function Services() {
     <>
       <Hero
         title="Our Services"
-        className="text-3xl text-center top-1/2 left-16"
+        className="text-3xl text-center top-1/2 left-16 md:text-[2rem] md:left-1/3"
       />
       <section className="py-2 -mb-3 mt-3">
-        <SplideSlider items={slide} onItemClick={handleSliderItem} />
+        <SplideSlider 
+        items={slide} 
+        onItemClick={handleSliderItem} 
+        />
       </section>
-      <Subtitle title={title} />
+      <Subtitle title={title}/>
       <ServiceCards
         service={service}
         showMore={showMore}

@@ -1,10 +1,8 @@
-import React from "react";
 import Card from "./Card";
 import { useData } from "../data/DataProvider";
 
 function ServiceCards({ service, showMore, setShowMore }) {
   const data = useData()
-  // console.log('service :',service)
   if(!data) return null
   return (
     <>
