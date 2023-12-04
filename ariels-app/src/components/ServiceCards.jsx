@@ -31,6 +31,7 @@ function ServiceCards({ service, showMore, setShowMore }) {
                   price={price}
                   showMore={showMore}
                   setShowMore={setShowMore}
+                  id = {id}
                 />
               );
             })
