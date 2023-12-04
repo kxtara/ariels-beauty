@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useBookingContext } from "./BookingContext";
 function Card({
   image,
   imageAlt,
@@ -7,9 +8,11 @@ function Card({
   description,
   detailedDescription,
   price,
+  id
 }) {
   const [showMore, setShowMore] = useState(false);
   const handleVisibility = () => setShowMore(!showMore);
+  const {setData} = useBookingContext()
   return (
     <div className="bg-[#fffdfd] border-[1px] border-[rgba(30, 30, 30, 43%)] rounded-[0.75rem] flex flex-col  justify-center items-center w-[19rem] mx-[auto] mt-[auto] mb-8 font-['inter'] md:w-[25rem]">
       <img
@@ -40,7 +43,8 @@ function Card({
           {/* Link takes you to booking page & passes some props */}
           <Link
             className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
-            to={`/booking?title=${title}&price=${price}&image=${encodeURIComponent(image)}&imageAlt=${imageAlt}`}
+            to="/booking"
+            onClick={() => setData(title,price,image,imageAlt,id)}
           >
             Book
           </Link>
