@@ -4,16 +4,22 @@ import { useBookingContext } from "../components/BookingContext";
 // Define the Booking component.
 export default function Booking() {
   const {bookingData} = useBookingContext()
-  console.log(bookingData)
-  const {title,id,price,image,imageAlt} = bookingData
+  const {title,id,price,image,imageAlt,serviceType} = bookingData
+
   // Calculate the deposit amount based on the price.
   const BookedDeposit = () => {
     if (typeof price !== "number") {
       let regex = /[0-9]/g;
-      let match = parseInt(price.match(regex).join(""));
-      return Math.floor(match * 0.25) < 15
+      let match = price.match(regex);
+      // Check if there is a match before attempting to join and perform calculations
+    if (match) {
+      let numberValue = parseInt(match.join(""));
+      return Math.floor(numberValue * 0.25) < 15
         ? ""
-        : `Deposit: $${Math.floor(match * 0.25)}`;
+        : `Deposit: $${Math.floor(numberValue * 0.25)}`;
+    } else {
+      return ""; // Handle the case where there is no match
+    }
     }
   };
 
@@ -45,7 +51,7 @@ export default function Booking() {
           </p>
       </div>
       <h3 className="text-xs text-center mt-10 font-bold -mb-2">Choose date and time here:</h3>
-      <Calendar deposit={BookedDeposit} serviceId={id}/>
+      <Calendar deposit={BookedDeposit} serviceId={id} serviceType={serviceType}/>
     </>
   );
 }
