@@ -6,7 +6,7 @@ export const CalendarProvider = ({children}) => {
   const [calendarData,setCalendarData] = useState({})
 
   const setData = (deposit,formattedTime) => {setCalendarData({deposit,formattedTime})}
-  console.log("CalendarProvider - CalendarData:",calendarData)
+  console.log("CalendarData:",calendarData)
   return(
     <CalendarContext.Provider value={{ calendarData, setData }}>
       {children}
