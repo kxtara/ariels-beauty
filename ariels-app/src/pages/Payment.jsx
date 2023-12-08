@@ -1,21 +1,20 @@
-import { useSearchParams } from "react-router-dom";
 import Hero from "../components/Hero";
-
+import { useCalendarContext } from "../components/CalendarContext";
 
 export default function Payment(){
-    // Retrieve search parameters from the URL.
-  const [searchParams] = useSearchParams();
-
-  // Extract data from the search parameters.
-  const { deposit, date } = Object.fromEntries(
-    searchParams.entries()
-  );
+   const {calendarData} = useCalendarContext()
+   const {deposit,formattedTime: date} = calendarData
+   //console.log(calendarData)
+   
+   // Check if deposit is a function before invoking it
+   const depositValue = typeof deposit === 'function' ? deposit() : deposit
     return (
     <>
     <Hero title='testing' />
      <h1>Hello</h1> 
      <p>
-        display data: <br/> {deposit} <br />{date}
+        display data: <br/> {depositValue} <br />
+        {date}
      </p>  
     </>
     )
