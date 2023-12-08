@@ -5,10 +5,9 @@ const BookingContext = createContext()
 export const BookingProvider = ({children}) => {
     const [bookingData,setBookingData] = useState({})
 
-    const setData = (title,price,image,imageAlt,id) => {
-        setBookingData({title,price,image,imageAlt,id})
+    const setData = (title,price,image,imageAlt,id,serviceType) => {
+        setBookingData({title,price,image,imageAlt,id,serviceType})
     }
-    console.log("BookingProvider - bookingData:",bookingData)
     return(
         <BookingContext.Provider value={{ bookingData , setData }}>
         {children}
