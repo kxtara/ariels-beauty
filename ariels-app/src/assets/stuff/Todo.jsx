@@ -1,19 +1,8 @@
 // note = completed
 
-// TODO -  Research payment library (stripe)
-
-/* TODO -  
-
-• Work on excluding times on calendar after a user clicks pay (most likely exclude time after user pays - disable while user is on payment page, if user doesn't pay after a certain time enable time)
-
-- We're going to try using firebase since we've already used it in this project.
-
-- We'll store excluded times in firebase, that time being the time the current user click.
-
-- Have to figure out how the calendar for other users will be updated when a user selects a time
-*/
-
-
+// TODO -  figure out why when a user refresh booking and payment page some content is gone
+// TODO -    Research payment library (stripe)
+// TODO -    Work on excluding dates/times on calendar after a user clicks pay (most likely exclude date/time after user pays - disable while user is on payment page, if user doesn't pay after a certain time enable date/time)
 // TODO -    Work on desktop version
 // TODO -    Work on booking page design
 

@@ -85,7 +85,6 @@ const DataProvider = ({ children }) => {
     // Call the function to fetch service data when the component mounts
     getService();
   }, []);
-
   // Provide the data to components in the application using the DataContext.Provider
   return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };

@@ -1,27 +1,25 @@
-// Import the necessary dependencies.
-import { useSearchParams } from "react-router-dom";
 import Hero from "../components/Hero";
 import Calendar from "../components/Calendar";
-
+import { useBookingContext } from "../components/BookingContext";
 // Define the Booking component.
 export default function Booking() {
-  // Retrieve search parameters from the URL.
-  const [searchParams] = useSearchParams();
-
-  // Extract data from the search parameters.
-  const { title, price, image, imageAlt} = Object.fromEntries(
-    searchParams.entries()
-  );
-
+  const {bookingData} = useBookingContext()
+  const {title,id,price,image,imageAlt,serviceType} = bookingData
 
   // Calculate the deposit amount based on the price.
   const BookedDeposit = () => {
     if (typeof price !== "number") {
       let regex = /[0-9]/g;
-      let match = parseInt(price.match(regex).join(""));
-      return Math.floor(match * 0.25) < 15
+      let match = price.match(regex);
+      // Check if there is a match before attempting to join and perform calculations
+    if (match) {
+      let numberValue = parseInt(match.join(""));
+      return Math.floor(numberValue * 0.25) < 15
         ? ""
-        : `Deposit: $${Math.floor(match * 0.25)}`;
+        : `Deposit: $${Math.floor(numberValue * 0.25)}`;
+    } else {
+      return ""; // Handle the case where there is no match
+    }
     }
   };
 
@@ -56,7 +54,7 @@ export default function Booking() {
       </div>
       <div className="">
         <h3 className="text-xs text-center mt-10 font-bold -mb-2 md:text-base">Choose date and time here:</h3>
-      <Calendar deposit={BookedDeposit}/>
+      <Calendar deposit={BookedDeposit} serviceId={id} serviceType={serviceType}/>
       </div>
       
     </>

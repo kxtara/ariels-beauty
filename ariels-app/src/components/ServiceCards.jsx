@@ -17,6 +17,7 @@ function ServiceCards({ service, showMore, setShowMore }) {
                 imageUrl,
                 price,
                 title,
+                collectionName
               } = item;
               return (
                 <Card
@@ -29,6 +30,8 @@ function ServiceCards({ service, showMore, setShowMore }) {
                   price={price}
                   showMore={showMore}
                   setShowMore={setShowMore}
+                  id = {id}
+                  serviceType={collectionName}
                 />
               );
             })
@@ -39,14 +42,3 @@ function ServiceCards({ service, showMore, setShowMore }) {
 }
 
 export default ServiceCards;
-
-/*
-braid.png
-
-hair-washing (2).png
-
-wig.png
-
-woman.png
-
-*/
