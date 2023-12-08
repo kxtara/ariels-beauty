@@ -5,38 +5,40 @@ Welcome to the process documentation for Ariel's Beauty App. This document provi
 ## Table of Contents
 
 - [Home](#home)
-- [About](#about)
 - [Contact](#contact)
 - [Services](#services)
+- [Booking](#booking)
+- [Payment](#payment)
 - [Components](#components)
 
-## Home
+## [Home](src/pages/Home.jsx)
 
-In the Home section, we have used the Subtitle and ServiceCards components to create an engaging user experience.
+In the Home section, we have used the `Subtitle` and `ServiceCards` components to create an engaging user experience.
 
-## Subtitle Component
+### [Subtitle Component](src/components/Subtitle.jsx)
 
-The Subtitle component takes a 'title' prop and displays it between two lines.
+The `Subtitle` component takes a 'title' prop and displays it between two lines.
 
 ```jsx
 <Subtitle title="Welcome to Ariel's Beauty App" />
 ```
 
-## ServiceCards Component
+### [ServiceCards Component](src/components/ServiceCards.jsx)
 
-The ServiceCards component iterates over an array of service objects and displays them in card format. Each card accepts various props like 'title', 'image', 'description', and more.
+The `ServiceCards` component iterates over data sourced from our `DataProvider`, which retrieves information from Firebase Firestore.
 
 ```jsx
-<ServiceCards services={service} />
+<ServiceCards
+service={service}
+showMore={showMore}
+setShowMore={setShowMore}
+/>
 ```
 
-## About
 
-The About page utilizes the `Subtitle` component to showcase information and links related to the owner.
-## Contact
+## [Contact](src/pages/Contact.jsx)
 
-
-To address user inquiries, the Contact section features a form that has been implemented using `emailjs`. 
+To facilitate user inquiries, the Contact section incorporates a form powered by `emailjs`. Users can send an email, including their name, phone number, type of inquiry, and a message.
 
 ```jsx
   const sendEmail = (e) => {
@@ -54,11 +56,18 @@ To address user inquiries, the Contact section features a form that has been imp
   };
 ```
 
-## Services
+## [Services](src/pages/Services.jsx)
 
-In the Services section, there is a slider implemented with `splidejs` that allows users to click on it, rendering the corresponding service on the page using the `ServiceCards` component.
+In the Services section, a slider has been integrated using `splidejs`, enabling users to click on a service. This action renders the corresponding service on the page through the ServiceCards component.
 
-## ServiceCards Component(Revisited)
+```jsx
+<SplideSlider 
+items={slide} 
+onItemClick={handleSliderItem} 
+/>
+```
+
+### ServiceCards Component(Revisited)
 
 While developing the services page, I encountered an issue. The problem arises when a service from the slider is clicked, as the button in the card component remains in the "true" state if it was clicked while a user was viewing a different service.
 
@@ -72,25 +81,124 @@ To address the issue, I've enhanced the ServiceCards component to manage the 'sh
 />
 ```
 
-## Card Component(Revisited)
+### Card Component(Revisited)
 
-The Card component now includes a feature to show additional details about a service and a button to book the service.
+The Card component now includes two new props: `detailedDescription` for additional service information, and `serviceType` to manage unavailable times for the service through Firebase.
 
 ```jsx
 <Card
-  title={item.title}
-  image={item.image}
-  imageAlt={item.imageAlt}
-  description={item.description}
-  price={item.price}
+  ...
   detailedDescription={item.detailedDescription}
-  key = {item.id}
-  showMore={showMore}
-  setShowMore={setShowMore}
+  serviceType = {"Featured"}
 />
 ```
 
-## Components
+## [Booking](src/pages/Booking.jsx)
+
+In the booking page, the `Calendar` component and `BookingContext` are utilized.
+
+### [BookingContext](src/components/BookingContext.jsx)
+
+`BookingContext` is employed to transmit data from the card component to the Booking page when the 'book' button is clicked.
+
+```jsx
+// BookingContext.jsx
+<BookingContext.Provider value={{ bookingData, setData }}>
+  {children}
+</BookingContext.Provider>
+
+// Card.jsx
+<Link
+  to="/booking"
+  onClick={() => setData(title, price, image, imageAlt, id, serviceType)}
+>
+  Book
+</Link>
+```
+
+### [Calendar Component](src/components/Calendar.jsx)
+
+`Calendar` is responsible for selecting dates and times for the booking.
+
+In the `Calendar` component, we incorporate react-datepicker, calendarContext, and various functions from Firebase Firestore.
+
+`calendarContext` is employed to transfer data from the `Calendar` component to the `payment` page.
+
+Two crucial aspects of the Calendar component are the includeTimes and excludeTimes props in the DatePicker component.
+
+IncludeTimes
+
+The `includeTimes` prop accepts an array of date objects. We initialize a state for time slots.
+
+```jsx
+// Calendar.jsx
+const [timeSlots, setTimeSlots] = useState([]);
+```
+
+In the `generateAvailableTimeSlots` function, we check the `excludedTimes` variable, derived from the `getUnavailableTimesForSelectedDay` function. If `excludedTimes` is an empty array, we loop from 7 to 19 (excluding times 12 and 13), add the times to a times array, and update/set the time slots using our state update function. We ensure that date objects are added to the arrays. If `excludedTimes` is not an empty array we loop from 7 to 19 (excluding times 12,13, and times in the `excludedTimes` array).
+
+```jsx
+// Calendar.jsx
+const generateAvailableTimeSlots = () => {
+  const excludedTimes = getUnavailableTimesForSelectedDay().filter(
+    (time) => time instanceof Date
+  );
+
+  const times = [];
+
+  for (let i = 7; i < 20; i++) {
+    if (
+      i !== 12 &&
+      i !== 13 &&
+      (!excludedTimes.length ||
+        !excludedTimes.some((time) => time.getHours() === i))
+    ) {
+      let time = setHours(setMinutes(startDate, 0), i);
+      times.push(time);
+    }
+  }
+  setTimeSlots(times);
+};
+```
+We fetch unavailable times from the specific service in Firestore using the `serviceType` and `serviceId` props. The `onSnapshot` function is employed to detect changes to the data in the `UnavailableTimes` subcollection. Whenever there's a change, `generateAvailableTimeSlots` is executed based on the new unavailable times.
+
+```jsx
+// Calendar.jsx
+useEffect(() => {
+  const unsubscribe = onSnapshot(
+    collection(
+      db,
+      `Services/Root/${serviceType}/${serviceId}/UnavailableTimes`
+    ),
+    (snapshot) => {
+      try {
+        const times = snapshot.docs.flatMap((dateDoc) => {
+          const date = dateDoc.id;
+          const parsedDate = parse(
+            date,
+            "MMM EEE d, yyyy - h:mm aa",
+            new Date()
+          );
+          return parsedDate;
+        });
+        generateAvailableTimeSlots();
+      } catch (error) {
+        console.error(
+          "Error in onSnapshot callback, Calendar Component:",
+          error
+        );
+      }
+    }
+  );
+  return () => unsubscribe();
+}, [serviceType, serviceId, startDate]);
+```
+
+
+## [Payment](src/pages/Payment.jsx)
+
+
+## [Components](src/components)
 
 Let's explore the custom components that make up Ariel's Beauty App.
 
