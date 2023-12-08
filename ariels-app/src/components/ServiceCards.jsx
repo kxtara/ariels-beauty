@@ -4,7 +4,6 @@ import { useData } from "../data/DataProvider";
 
 function ServiceCards({ service, showMore, setShowMore }) {
   const data = useData()
-  // console.log('service :',service)
   if(!data) return null
   return (
     <>
@@ -19,6 +18,7 @@ function ServiceCards({ service, showMore, setShowMore }) {
                 imageUrl,
                 price,
                 title,
+                collectionName
               } = item;
               return (
                 <Card
@@ -32,6 +32,7 @@ function ServiceCards({ service, showMore, setShowMore }) {
                   showMore={showMore}
                   setShowMore={setShowMore}
                   id = {id}
+                  serviceType={collectionName}
                 />
               );
             })
@@ -42,14 +43,3 @@ function ServiceCards({ service, showMore, setShowMore }) {
 }
 
 export default ServiceCards;
-
-/*
-braid.png
-
-hair-washing (2).png
-
-wig.png
-
-woman.png
-
-*/
