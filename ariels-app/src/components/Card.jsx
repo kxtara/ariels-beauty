@@ -8,7 +8,8 @@ function Card({
   description,
   detailedDescription,
   price,
-  id
+  id,
+  serviceType
 }) {
   const [showMore, setShowMore] = useState(false);
   const handleVisibility = () => setShowMore(!showMore);
@@ -44,7 +45,7 @@ function Card({
           <Link
             className="text-[#f8f8f8] bg-[#6C705F] rounded-[15px]   font-bold text-xl px-12 py-[.4rem]"
             to="/booking"
-            onClick={() => setData(title,price,image,imageAlt,id)}
+            onClick={() => setData(title,price,image,imageAlt,id,serviceType)}
           >
             Book
           </Link>
